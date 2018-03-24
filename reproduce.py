@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 import os, sys
-import torch, cv2
+import torch
+import imageio
 import configparser
 import numpy as np
 import h5py
@@ -56,12 +57,12 @@ if __name__ == '__main__':
         if file.endswith(".jpg"):
             filename_rgb = os.path.join(path2images, file)
             allImageNames.append(filename_rgb)
-            allImgs[file[:-11]] = cv2.imread(filename_rgb)
+            allImgs[file[:-11]] = imageio.imread(filename_rgb)
             found_jpg = 1
         if file.endswith(".png"):
             filename_rgb = os.path.join(path2images, file)
             allImageNames.append(filename_rgb)
-            allImgs[file[:-10]] = cv2.imread(filename_rgb)
+            allImgs[file[:-10]] = imageio.imread(filename_rgb)
             found_png = 1
 
     for name in allImageNames:
