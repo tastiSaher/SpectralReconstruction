@@ -4,7 +4,7 @@ This repository contains the code used to participate at the [CVPR 2018 challeng
 The basic task is to reconstruct 31-channel multispectral images from RGB-images.
 
 Next to the source files, this repository also provides the zip-file "reproduce.zip". 
-The executable inside, "reproduce.exe", runs out of the box under Windows (tested for Windows 10 x64) and is capable of performing the task of spectral reconstruction using our either of our two models trained for the challenge.
+The executable inside, "reproduce.exe", runs out of the box under Windows (tested for Windows 10 x64) and is capable of performing the task of spectral reconstruction using either of the two models trained for the challenge.
 Details on the executable are given in the respective [section](#exeInfo).
 
 The code itself is written in python. 
@@ -40,8 +40,8 @@ After all images have been processed, the corresponding files using hdf5 storage
 ### How to reproduce our final results for dummies
 0. Make sure your operating system is Windows 10 (64bit).
 1. Download the file "reproduce.zip" and extract all its contents to a folder of your choice, "root_dir". 
-2. Copy the images from the track "Clean" you would like to reconstruct into the folder "root_dir/images_clean".
-3. Copy the images from the track "RealWorld" you would like to reconstruct into the folder "root_dir/images_real".
+2. Copy the images from the track "Clean" you would like to reconstruct into the folder "root_dir/images_clean/".
+3. Copy the images from the track "RealWorld" you would like to reconstruct into the folder "root_dir/images_real/".
 
 #### Track Clean
 If you did not change the file "root_dir/config.ini", simply run the executable "root_dir/reproduce.exe".
