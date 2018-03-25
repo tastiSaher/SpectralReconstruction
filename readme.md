@@ -3,8 +3,8 @@
 This repository contains the code used to participate at the [CVPR 2018 challenge on spectral reconstruction](http://icvl.cs.bgu.ac.il/ntire-2018/).
 The basic task is to reconstruct 31-channel multispectral images from RGB-images.
 
-Next to the source files, this repository also provides the zip-file standalone folder "reproduction". 
-The executable inside, "reproduce.exe", runs out of the box under Windows (tested for Windows 10 x64) and is capable of performing the task of spectral reconstruction using our models trained for the challenge.
+Next to the source files, this repository also provides the zip-file "reproduce.zip". 
+The executable inside, "reproduce.exe", runs out of the box under Windows (tested for Windows 10 x64) and is capable of performing the task of spectral reconstruction using our either of our two models trained for the challenge.
 Details on the executable are given in the respective [section](#exeInfo).
 
 The code itself is written in python. 
@@ -27,17 +27,40 @@ While there is also a pytorch version available for Windows, which can be found 
 In theory, it should be running just fine.
 
 ## <a name="exeInfo"></a> Using the Executable
-The executable is created from the script "reproduce.py" and is meant to be run under Windows.
+The executable was created from the script "reproduce.py" using pyinstaller and is meant to be run under Windows.
 It allows to perform the task of spectral reconstruction using either of the two models specifically trained for the two respective challenge tracks on any image.
-This is the most simple way to reproduce our results or apply the pretrained models to other images.
-For the sake of simplicity and to limit possible requirements, all computations are performed on the cpu only. 
-Therefore, the reconstruction takes some time, e.g. the 5 images of the challenge test set took on our system having 3.4GHz roughly 25min.
-In order to take advantage of GPU support, take a look at the script "reproduce.py" instead.
-
-Before you use the executable, it is necessary to specify a path to the folder containing the RGB-images to be processed.
+This is the most simple way to reproduce our results or apply the trained models to other images.
+For the sake of simplicity and to limit possible requirements, all computations are performed on the cpu only when using the executable. 
+Therefore, the reconstruction may take some time, e.g. the 5 images of the challenge may take up to 30min to be processed.
+In order to take advantage of GPU support, take a look at the script "reproduce.py" instead, in which case the processing time for the same 5 images reduces to a couple of seconds.
 
 During execution, the spectral reconstruction of the input images will be initially stored as .npy files. 
-After all images have been processed, the corresponding files using hdf5 storage will be created, which are compatible to the challenge data format.
+After all images have been processed, the corresponding files using hdf5 storage will be created, which are compatible to the challenge data format. Although the created files using hdf5 storage might suggest that thery are matlab files, i.e. end with ".mat", they are not  since they lack the necessary header. You may treat them as ".h5" files.
+
+### How to reproduce our final results for dummies
+0. Make sure your operating system is Windows 10 (64bit).
+1. Download the file "reproduce.zip" and extract all its contents to a folder of your choice, "root_dir". 
+2. Copy the images from the track "Clean" you would like to reconstruct into the folder "root_dir/images_clean".
+3. Copy the images from the track "RealWorld" you would like to reconstruct into the folder "root_dir/images_real".
+
+#### Track Clean
+If you did not change the file "root_dir/config.ini", simply run the executable "root_dir/reproduce.exe".
+The reconstructed images will be stored inside "root_dir/reconstruction/" when done.
+
+#### Track RealWorld
+1. Open the file "root_dir/config.ini".
+2. Change the second line to
+```
+track = RealWorld
+```
+3. Change the fifth line to
+```
+path2images = ./images_real/
+```
+4. Save and close the file "root_dir/config.ini".
+5. If the folder "root_dir/reconstruction/" exists, make sure it is empty.
+6. Run the executable "root_dir/reproduce.exe" and wait.
+7. The reconstructed images will be stored inside "root_dir/reconstruction/".
 
 ### Configuration
 
@@ -62,5 +85,3 @@ Tarek Stiebel
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
