@@ -48,19 +48,19 @@ If you did not change the file "root_dir/config.ini", simply run the executable 
 The reconstructed images will be stored inside "root_dir/reconstruction/" when done.
 
 #### Track RealWorld
-1. Open the file "root_dir/config.ini".
-2. Change the second line to
+4. Open the file "root_dir/config.ini".
+5. Change the second line to
 ```
 track = RealWorld
 ```
-3. Change the fifth line to
+6. Change the fifth line to
 ```
 path2images = ./images_real/
 ```
-4. Save and close the file "root_dir/config.ini".
-5. If the folder "root_dir/reconstruction/" exists, make sure it is empty.
-6. Run the executable "root_dir/reproduce.exe" and wait.
-7. The reconstructed images will be stored inside "root_dir/reconstruction/".
+7. Save and close the file "root_dir/config.ini".
+8. If the folder "root_dir/reconstruction/" exists, make sure it is empty.
+9. Run the executable "root_dir/reproduce.exe" and wait.
+10. The reconstructed images will be stored inside "root_dir/reconstruction/".
 
 ### Configuration
 
