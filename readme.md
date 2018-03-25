@@ -49,7 +49,7 @@ The reconstructed images will be stored inside "root_dir/reconstruction/" when d
 
 #### Track RealWorld
 4. Open the file "root_dir/config.ini".
-5. Change the second line to
+5. Change the third line to
 ```
 track = RealWorld
 ```
