@@ -78,9 +78,6 @@ The default is 'path2images = ./images_real/'.
 The reconstructed files will have the same name as their corresponding RGB images.
 The default is 'path2store = ./reconstruction/'.
 
-## Authors
-
-Tarek Stiebel
 
 ## License
 
