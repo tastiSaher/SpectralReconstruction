@@ -10,6 +10,21 @@ Details on the executable are given in the respective [section](#exeInfo).
 The code itself is written in python. 
 Deep learning is implemented and applied with the help of pytorch.
 
+A detailed description of the algorithmic approach can be found in our corresponding publication:
+http://openaccess.thecvf.com/content_cvpr_2018_workshops/w13/html/Stiebel_Reconstructing_Spectral_Images_CVPR_2018_paper.html
+
+Link to the challenge summary:
+http://openaccess.thecvf.com/content_cvpr_2018_workshops/w13/html/Arad_NTIRE_2018_Challenge_CVPR_2018_paper.html
+
+If you find this repository helpful or use it for any academic publication, kindly cite the following paper:
+@InProceedings{Stiebel_2018_CVPR_Workshops,<br/>
+author = {Stiebel, Tarek and Koppers, Simon and Seltsam, Philipp and Merhof, Dorit},<br/>
+title = {Reconstructing Spectral Images From RGB-Images Using a Convolutional Neural Network},<br/>
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},<br/>
+month = {June},<br/>
+year = {2018}<br/>
+}
+
 ## Using the Code
 A more detailed documentation is about to follow... .
 
