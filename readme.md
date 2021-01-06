@@ -26,8 +26,6 @@ year = {2018}<br/>
 }
 
 ## Using the Code
-A more detailed documentation is about to follow... .
-
 There are 3 important scripts to be found: 
 * reproduce.py allows to load either of our two models pretrained for their respective challenge tracks, i.e. Clean or RealWorld. 
 The loaded model is then used to reconstruct every rgb image within a directory of choice.
