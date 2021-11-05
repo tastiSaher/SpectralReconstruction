@@ -6,6 +6,7 @@ import imageio
 import configparser
 import numpy as np
 import h5py
+from pathlib import Path
 from networks.Models import BaseModel_ICVLChallenge
 
 if __name__ == '__main__':
@@ -57,12 +58,12 @@ if __name__ == '__main__':
         if file.endswith(".jpg"):
             filename_rgb = os.path.join(path2images, file)
             allImageNames.append(filename_rgb)
-            allImgs[file[:-11]] = imageio.imread(filename_rgb)
+            allImgs[Path(file).stem] = imageio.imread(filename_rgb)
             found_jpg = 1
         if file.endswith(".png"):
             filename_rgb = os.path.join(path2images, file)
             allImageNames.append(filename_rgb)
-            allImgs[file[:-10]] = imageio.imread(filename_rgb)
+            allImgs[Path(file).stem] = imageio.imread(filename_rgb)
             found_png = 1
 
     for name in allImageNames:
