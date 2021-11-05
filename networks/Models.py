@@ -89,7 +89,7 @@ class BaseModel_ICVLChallenge(BDNN):
             imgHeight = img.shape[0]
             imgWidth = img.shape[1]
 
-            img = np.expand_dims(img, axis=4)
+            img = np.expand_dims(img, axis=3)
             allRGB = torch.from_numpy(img)
             allRGB = allRGB.permute(3, 2, 0, 1)
 
